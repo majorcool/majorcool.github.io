@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>力量训练知识体系</title>
+  <meta name="description" content="面向力量训练爱好者的系统化知识普及网站。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top"><span class="brand-mark">力</span><span>力量训练知识体系</span></a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#map">知识地图</a>
+      <a href="#levels">阶段路径</a>
+      <a href="#practice">训练处方</a>
+      <a href="#library">动作库</a>
+      <a href="#evidence">资料依据</a>
+    </nav>
+  </header>
+  <main id="top">
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Evidence-based strength training</p>
+    <h1>把力量训练学明白，再练得长期、稳定、有效。</h1>
+    <p class="lead">面向训练爱好者的实践型知识架构：用权威指南建立底层原则，用清晰路径连接动作、计划、恢复和进阶决策。</p>
+    <div class="hero-actions">
+      <a class="button primary" href="#levels">选择训练阶段</a>
+      <a class="button secondary" href="#practice">查看可执行模板</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <img src="assets/strength-system.svg" alt="力量训练系统图示">
+  </div>
+</section>
+<section class="stats-band" aria-label="核心共识">
+  <div><strong>每周 2 天以上</strong><span>成人应进行涉及主要肌群的肌肉强化活动。</span></div>
+  <div><strong>8-12 次</strong><span>常见增肌与基础力量训练的有效重复次数区间之一。</span></div>
+  <div><strong>渐进超负荷</strong><span>适应来自负荷、次数、组数、频率或动作质量的可控提升。</span></div>
+</section>
+
+<section id="map" class="section">
+  <div class="section-heading">
+    <p class="eyebrow">Knowledge architecture</p>
+    <h2>专家可审阅的知识地图</h2>
+    <p>力量训练不是动作清单，而是由目标、刺激、技术、恢复和反馈构成的系统。</p>
+  </div>
+  <div class="map-grid">
+    <article><span class="icon">01</span><h3>目标与人群</h3><p>明确增肌、力量、健康、体态或运动表现；评估训练史、伤病、器械、时间和恢复能力。</p></article>
+    <article><span class="icon">02</span><h3>动作模式</h3><p>深蹲、髋铰链、推、拉、弓步、旋转控制和负重行走，比孤立动作名称更适合组织训练。</p></article>
+    <article><span class="icon">03</span><h3>训练变量</h3><p>频率、强度、组数、次数、动作速度、组间休息和接近力竭程度共同决定刺激。</p></article>
+    <article><span class="icon">04</span><h3>恢复与营养</h3><p>睡眠、蛋白质、总能量、压力管理和训练间隔决定刺激能否转化为适应。</p></article>
+    <article><span class="icon">05</span><h3>监控与调整</h3><p>记录重量、次数、RPE、疼痛、睡眠和体重趋势，用数据判断加量、维持或减量。</p></article>
+  </div>
+</section>
+
+<section id="levels" class="section tinted">
+  <div class="section-heading">
+    <p class="eyebrow">Training pathway</p>
+    <h2>从零基础到高级的阶段路径</h2>
+    <p>每个阶段只解决当前最重要的问题：先学动作，再积累容量，最后管理疲劳和周期化。</p>
+  </div>
+  <div class="tabs" role="tablist">
+    <button class="active" data-level="beginner">零基础</button>
+    <button data-level="intermediate">进阶</button>
+    <button data-level="advanced">高级</button>
+  </div>
+  <div id="levelPanel" class="level-panel"></div>
+</section>
+
+<section id="practice" class="section">
+  <div class="section-heading">
+    <p class="eyebrow">Prescription</p>
+    <h2>把原则变成今天能练的计划</h2>
+    <p>选择目标和训练天数，得到一个可执行的周模板。实际训练应根据技术质量、恢复和疼痛反馈调整。</p>
+  </div>
+  <div class="planner">
+    <label>训练目标
+      <select id="goalSelect">
+        <option value="health">健康基础</option>
+        <option value="hypertrophy">增肌</option>
+        <option value="strength">最大力量</option>
+      </select>
+    </label>
+    <label>每周天数
+      <input id="dayRange" type="range" min="2" max="5" value="3">
+      <span id="dayValue">3 天</span>
+    </label>
+    <div id="planOutput" class="plan-output"></div>
+  </div>
+</section>
+
+<section id="library" class="section tinted">
+  <div class="section-heading">
+    <p class="eyebrow">Exercise library</p>
+    <h2>动作库按模式组织，而不是按器械堆砌</h2>
+  </div>
+  <div class="exercise-grid" id="exerciseGrid"></div>
+</section>
+
+<section id="evidence" class="section evidence">
+  <div class="section-heading">
+    <p class="eyebrow">Evidence</p>
+    <h2>资料依据与审阅口径</h2>
+    <p>本网站以公共健康指南、运动医学立场声明、力量体能教材体系和同行评议综述为基础，避免把单一网红经验包装成通用规律。</p>
+  </div>
+  <div class="evidence-list">
+    <article><h3>WHO 与 CDC</h3><p>成人身体活动指南均强调每周至少 2 天进行涉及主要肌群的肌肉强化活动，并结合有氧活动获得整体健康收益。</p></article>
+    <article><h3>ACSM</h3><p>阻力训练进阶模型强调渐进超负荷、训练特异性、个体化、周期化，以及通过强度、容量和频率调控适应。</p></article>
+    <article><h3>NSCA</h3><p>力量体能体系通常以动作技术、测试评估、训练处方、恢复和运动表现转化为主线，适合搭建专业训练知识框架。</p></article>
+    <article><h3>实践边界</h3><p>疼痛、既往损伤、慢性疾病、孕期或术后恢复人群，应优先获得医疗或认证专业人士评估。</p></article>
+  </div>
+</section>
+
+  </main>
+  <footer class="footer">内容用于训练教育，不替代医生、物理治疗师或认证教练的个体化评估。</footer>
+  <script src="data/content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
