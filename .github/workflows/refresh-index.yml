@@ -22,3 +22,23 @@ jobs:
         with:
           commit_message: Refresh hosted project index
           file_pattern: index.html
+      - name: Notify Feishu
+        if: always()
+        env:
+          FEISHU_BOT_WEBHOOK: ${{ secrets.FEISHU_BOT_WEBHOOK }}
+          FEISHU_MESSAGE: >-
+            GitHub Pages Action finished
+            Repository: ${{ github.repository }}
+            Branch: ${{ github.ref_name }}
+            Status: ${{ job.status }}
+            Actor: ${{ github.actor }}
+            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          if [ -z "${FEISHU_BOT_WEBHOOK}" ]; then
+            echo "FEISHU_BOT_WEBHOOK secret is not configured; skipping Feishu notification."
+            exit 0
+          fi
+          curl -fsS -X POST "${FEISHU_BOT_WEBHOOK}" \
+            -H "Content-Type: application/json" \
+            -d "$(node -e 'console.log(JSON.stringify({msg_type:"text",content:{text:process.env.FEISHU_MESSAGE}}))')"
